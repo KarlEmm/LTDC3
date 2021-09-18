@@ -1,11 +1,10 @@
 package com.example.ltdc3;
 
-import android.net.Uri;
-import android.widget.ImageView;
+import android.app.Application;
 
 import java.util.ArrayList;
 
-public class Database {
+public class Database extends Application {
     ArrayList<User> users = new ArrayList<>();
     ArrayList<FeedData> feedData = new ArrayList<>();
     int idSingleton=0;
@@ -26,7 +25,7 @@ public class Database {
         this.feedData = feedData;
     }
 
-    public Database() {
+    public void initDB() {
         ArrayList<Comment> comments = new ArrayList<>();
         User u1 = new User("karl.bast@gmail.com", "Bastarache", "Karl-Emmanuel", "Séminaire Saint-Joseph", "password", R.drawable.teenager2);
         User u2 = new User("lisa.marier@gmail.com", "Marier", "Lisa", "Séminaire Saint-Joseph", "password", R.drawable.teenager1);
@@ -44,5 +43,10 @@ public class Database {
         comments.add(c1);
         FeedData fd2 = new FeedData(idSingleton++, R.drawable.gazpacho, "My Summer Gazpacho", "2021/09/15", u2, 10, comments);
         feedData.add(fd2);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
     }
 }

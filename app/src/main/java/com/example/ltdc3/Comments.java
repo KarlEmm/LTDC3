@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 /**
  * A fragment representing a list of Items.
  */
-public class HomePage extends Fragment {
+public class Comments extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -26,13 +26,13 @@ public class HomePage extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public HomePage() {
+    public Comments() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static HomePage newInstance(int columnCount) {
-        HomePage fragment = new HomePage();
+    public static Comments newInstance(int columnCount) {
+        Comments fragment = new Comments();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -50,7 +50,7 @@ public class HomePage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home_page_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_comments_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -61,7 +61,7 @@ public class HomePage extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapterFeed(((Database) context.getApplicationContext()).feedData, context));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapterFeed(((Database) context.getApplicationContext()).getFeedData(), context));
         }
         return view;
     }
