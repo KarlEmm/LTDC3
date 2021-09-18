@@ -8,7 +8,7 @@
     android:orientation="vertical"
     app:layoutDescription="@xml/login_scene"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:layout_marginStart="30dp">
+    android:layout_marginLeft="30dp">
 
     <TextView
         android:id="@+id/log_in"
@@ -75,7 +75,7 @@
         />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/create_account_button"
         android:layout_width="325dp"
         android:layout_height="49dp"
         android:text="Log in"
@@ -110,7 +110,7 @@
         />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/forgotPassButton"
         android:layout_width="216dp"
         android:layout_height="46dp"
         android:layout_marginTop="30dp"
@@ -118,6 +118,5 @@
         android:textColor="#4CAF50"
 
         />
-    private Button button4;
 
 </LinearLayout>
