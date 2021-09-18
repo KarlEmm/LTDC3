@@ -27,10 +27,19 @@ public class Database extends Application {
 
     public void initDB() {
         ArrayList<Comment> comments = new ArrayList<>();
-        User u1 = new User("karl.bast@gmail.com", "Bastarache", "Karl-Emmanuel", "Séminaire Saint-Joseph", "password", R.drawable.teenager2);
-        User u2 = new User("lisa.marier@gmail.com", "Marier", "Lisa", "Séminaire Saint-Joseph", "password", R.drawable.teenager1);
+
+        User u1 = new User("karl.bast@gmail.com", "Bastarache", "Karl-Emmanuel", "Séminaire Saint-Joseph", "password", R.drawable.teenager2, 100);
+        User u2 = new User("lisa.marier@gmail.com", "Marier", "Lisa", "Séminaire Saint-Joseph", "password", R.drawable.teenager1, 200);
+        User u3 = new User("john.smith@gmail.com", "John", "Smith", "Polytechnique", "password", R.drawable.teenager4, 300);
+        User u4 = new User("Paul@gmail.com", "Paul", "Blart", "Harvard", "password", R.drawable.teenager3, 400);
+
+        u1.addFriend(u2);
+        u2.addFriend(u1);
+
         users.add(u1);
         users.add(u2);
+        users.add(u3);
+        users.add(u4);
 
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", "1h");
         comments.add(c1);

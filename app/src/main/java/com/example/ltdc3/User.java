@@ -3,13 +3,17 @@ package com.example.ltdc3;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 
+import java.util.ArrayList;
+
 public class User {
     public String email;
     public String name;
     public String firstname;
     public String school;
     public String password;
+    public ArrayList<User> friends;
     public int profilePic;
+    public int points;
 
     public String getEmail() {
         return email;
@@ -59,12 +63,26 @@ public class User {
         this.profilePic = profilePic;
     }
 
-    public User(String email, String name, String firstname, String school, String password, int profilePic) {
+    public int getPoints() {
+        return points;
+    }
+
+    public void addFriend(User friend) {
+        friends.add(friend);
+    }
+
+    public String getCompleteName() {
+        return String.format("%s %s", firstname, name);
+    }
+
+    public User(String email, String name, String firstname, String school, String password, int profilePic, int points) {
         this.email = email;
         this.name = name;
         this.firstname = firstname;
         this.school = school;
         this.password = password;
+        this.friends = new ArrayList<User>();
         this.profilePic = profilePic;
+        this.points = points;
     }
 }
