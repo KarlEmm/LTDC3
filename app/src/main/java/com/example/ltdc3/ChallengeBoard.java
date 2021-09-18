@@ -3,6 +3,7 @@ package com.example.ltdc3;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,8 @@ public class ChallengeBoard extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View mView;
 
     public ChallengeBoard() {
         // Required empty public constructor
@@ -59,6 +62,38 @@ public class ChallengeBoard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_challenge_board, container, false);
+        mView = inflater.inflate(R.layout.fragment_challenge_board, container, false);
+        setClickEvents(container);
+
+        return mView;
+    }
+
+    private void setClickEvents(ViewGroup container) {
+        View communityButton = mView.findViewById(R.id.communityChallengesText);
+        communityButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().
+                        replace(container.getId(), new CommunityChallenge(), "communityChallenges").
+                        commit();
+            }
+        });
+
+        View friendButton = mView.findViewById(R.id.challengeAFriendText);
+        friendButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().
+                        replace(container.getId(), new FriendChallenges(), "friendChallenges").
+                        commit();
+            }
+        });
+
+        View openButton = mView.findViewById(R.id.yourOpenChallengesText);
+        openButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().
+                        replace(container.getId(), new OpenChallenges(), "openChallenges").
+                        commit();
+            }
+        });
     }
 }
