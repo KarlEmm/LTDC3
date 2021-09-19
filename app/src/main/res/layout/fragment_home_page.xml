@@ -51,7 +51,7 @@
             android:layout_marginStart="10dp"
             android:background="@null"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/heart" />
+            app:srcCompat="@drawable/heartfilled" />
 
         <ImageButton
             android:id="@+id/commentBtn"

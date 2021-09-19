@@ -9,10 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,6 +68,14 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
                         commit();
             }
         });
+        holder.buttonLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemData.incrementLikes();
+                notifyItemChanged(holder.getAbsoluteAdapterPosition());
+                holder.buttonLike.setBackgroundColor(Color.parseColor("#ff3399"));
+            }
+        });
         holder.authorIV.setImageResource(itemData.getUser().getProfilePic());
     }
 
@@ -79,14 +90,16 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
         private ImageView postIV;
         private TextView likeTV;
         private TextView commentTV;
+        private ImageButton buttonLike;
 
         public ViewHolder(@NonNull View itemView) {
-                super(itemView);
-                authorIV = itemView.findViewById(R.id.idCVAuthorComment);
-                authorTV = itemView.findViewById(R.id.idTVAuthorNameComment);
-                postIV = itemView.findViewById(R.id.idIVPost);
-                likeTV = itemView.findViewById(R.id.idTVLikes);
-                commentTV = itemView.findViewById(R.id.idTVComments);
+            super(itemView);
+            authorIV = itemView.findViewById(R.id.idCVAuthorComment);
+            authorTV = itemView.findViewById(R.id.idTVAuthorNameComment);
+            postIV = itemView.findViewById(R.id.idIVPost);
+            likeTV = itemView.findViewById(R.id.idTVLikes);
+            commentTV = itemView.findViewById(R.id.idTVComments);
+            buttonLike = itemView.findViewById(R.id.likeBtn);
         }
     }
 }

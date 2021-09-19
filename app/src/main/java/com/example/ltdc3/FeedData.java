@@ -13,6 +13,7 @@ public class FeedData {
     private User user;
     private int likesCount;
     ArrayList<Comment> comments;
+    private ArrayList<User> usersLiked;
 
     public ArrayList<Comment> getComments() {
         return comments;
@@ -71,6 +72,22 @@ public class FeedData {
         this.timestamp = timestamp;
     }
 
+    public void addUserLikes(User user) {
+        usersLiked.add(user);
+    }
+
+    public void removeUserLikes(User user) {
+        usersLiked.remove(user);
+    }
+
+    public ArrayList<User> getUserliked() {
+        return usersLiked;
+    }
+
+    public void incrementLikes() {
+        this.likesCount++;
+    }
+
     public FeedData(int id, int imagePost,
                     String caption, String timestamp, User user, int likesCount, ArrayList<Comment> comments) {
         this.id = id;
@@ -80,5 +97,6 @@ public class FeedData {
         this.user = user;
         this.likesCount = likesCount;
         this.comments = comments;
+        this.usersLiked = new ArrayList<User>();
     }
 }
