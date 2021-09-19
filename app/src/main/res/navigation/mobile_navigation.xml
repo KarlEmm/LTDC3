@@ -16,9 +16,9 @@
         tools:layout="@layout/fragment_challenge_board" />
     <fragment
         android:id="@+id/leaderboard"
-        android:name="com.example.ltdc3.Leaderboard"
-        android:label="fragment_leaderboard_list"
-        tools:layout="@layout/fragment_leaderboard_list" />
+        android:name="com.example.ltdc3.Leaderboard_main"
+        android:label="Leaderboard"
+        tools:layout="@layout/fragment_leaderboard_main" />
     <fragment
         android:id="@+id/profile"
         android:name="com.example.ltdc3.Profile"

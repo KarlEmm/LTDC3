@@ -2,20 +2,19 @@ package com.example.ltdc3;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 /**
  * A fragment representing a list of Items.
  */
-public class Leaderboard extends Fragment {
+public class Leaderboard_RecyclerView extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -26,13 +25,13 @@ public class Leaderboard extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public Leaderboard() {
+    public Leaderboard_RecyclerView() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static Leaderboard newInstance(int columnCount) {
-        Leaderboard fragment = new Leaderboard();
+    public static Leaderboard_RecyclerView newInstance(int columnCount) {
+        Leaderboard_RecyclerView fragment = new Leaderboard_RecyclerView();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -52,7 +51,7 @@ public class Leaderboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_leaderboard_list, container, false);
-/*
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -62,8 +61,8 @@ public class Leaderboard extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapterLeaderboard(DummyContent.ITEMS));
-        }*/
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapterLeaderboard(((Database) context.getApplicationContext()).users, context));
+        }
         return view;
     }
 }

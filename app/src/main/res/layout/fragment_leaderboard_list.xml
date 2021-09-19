@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_page_list"
-    android:name="com.example.ltdc3.Leaderboard"
+    android:name="com.example.ltdc3.Leaderboard_RecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".Leaderboard"
-    tools:listitem="@layout/fragment_leaderboard" />
+    tools:context=".Leaderboard_RecyclerView"
+    tools:listitem="@layout/fragment_leaderboard" >
+
+</androidx.recyclerview.widget.RecyclerView>
