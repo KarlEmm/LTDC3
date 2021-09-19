@@ -11,33 +11,33 @@
 
     <ImageView
         android:id="@+id/challengeAFriend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:contentDescription="Image of two hands shaking"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.441"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/handshake" />
 
     <ImageView
         android:id="@+id/yourOpenChallenges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:contentDescription="Image of a target with an arrow going through it"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/challengeAFriend"
         app:layout_constraintVertical_bias="0.431"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/target" />
 
     <ImageView
         android:id="@+id/communityChallenges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:contentDescription="Image of three chefs behind a kitchen counter"
         app:layout_constraintBottom_toTopOf="@+id/challengeAFriend"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.514"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/groupchef" />
 
     <TextView
         android:id="@+id/communityChallengesText"
