@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/leaderboard"
         android:name="com.example.ltdc3.Leaderboard_main"
-        android:label="Leaderboard"
-        tools:layout="@layout/fragment_leaderboard_main" />
+        android:label="Leaderboard" />
+<!--        tools:layout="@layout/fragment_leaderboard_main" />-->
     <fragment
         android:id="@+id/profile"
         android:name="com.example.ltdc3.Profile"

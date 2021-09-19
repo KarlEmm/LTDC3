@@ -11,27 +11,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * A fragment representing a list of Items.
- */
-public class Leaderboard_RecyclerView extends Fragment {
-
+public class UserChallenge extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
-    public Leaderboard_RecyclerView() {
+    public UserChallenge() {
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static Leaderboard_RecyclerView newInstance(int columnCount) {
-        Leaderboard_RecyclerView fragment = new Leaderboard_RecyclerView();
+    public static UserChallenge newInstance(int columnCount) {
+        UserChallenge fragment = new UserChallenge();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -41,7 +32,6 @@ public class Leaderboard_RecyclerView extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -50,7 +40,7 @@ public class Leaderboard_RecyclerView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_leaderboard_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_challenge_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -61,7 +51,7 @@ public class Leaderboard_RecyclerView extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapterLeaderboard(((Database) context.getApplicationContext()).users, context, this));
+            recyclerView.setAdapter(new RecyclerViewAdapterChallengeUser(((Database) context.getApplicationContext()).challenges, context));
         }
         return view;
     }
