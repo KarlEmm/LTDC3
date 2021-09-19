@@ -2,6 +2,7 @@ package com.example.ltdc3;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,10 +24,12 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
 
     private ArrayList<FeedData> feedDataArrayList;
     private Context context;
+    private Fragment delegate;
 
-    public MyItemRecyclerViewAdapterFeed(ArrayList<FeedData> items, Context context) {
+    public MyItemRecyclerViewAdapterFeed(ArrayList<FeedData> items, Context context, Fragment delegate) {
         feedDataArrayList = items;
         this.context = context;
+        this.delegate = delegate;
     }
 
     @Override
@@ -57,11 +60,9 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
                 args.putInt("feedID", itemData.getId());
                 Comments fragComments = new Comments();
                 fragComments.setArguments(args);
-                FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.remove(fm.findFragmentById(R.id.nav_host_fragment));
-                ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().
-                        replace(R.id.nav_host_fragment, fragComments, null).commit();
+                delegate.getParentFragmentManager().beginTransaction().
+                        replace(R.id.nav_host_fragment, fragComments, null).
+                        commit();
             }
         });
         holder.authorIV.setImageResource(itemData.getUser().getProfilePic());

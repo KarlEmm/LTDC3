@@ -31,7 +31,7 @@ public class Database extends Application {
         User u1 = new User("karl.bast@gmail.com", "Bastarache", "Karl-Emmanuel", "Séminaire Saint-Joseph", "password", R.drawable.teenager2, 100);
         User u2 = new User("lisa.marier@gmail.com", "Marier", "Lisa", "Séminaire Saint-Joseph", "password", R.drawable.teenager1, 200);
         User u3 = new User("john.smith@gmail.com", "John", "Smith", "Polytechnique", "password", R.drawable.teenager4, 300);
-        User u4 = new User("Paul@gmail.com", "Paul", "Blart", "Harvard", "password", R.drawable.teenager3, 400);
+        User u4 = new User("Paul@gmail.com", "Blart", "Paul", "Harvard", "password", R.drawable.teenager3, 400);
 
         u1.addFriend(u2);
         u2.addFriend(u1);

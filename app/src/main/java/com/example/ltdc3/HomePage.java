@@ -61,7 +61,7 @@ public class HomePage extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapterFeed(((Database) context.getApplicationContext()).feedData, context));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapterFeed(((Database) context.getApplicationContext()).feedData, context, this));
         }
         return view;
     }
