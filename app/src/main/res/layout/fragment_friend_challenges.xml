@@ -61,8 +61,8 @@
                 android:text="What will they cook?"
                 android:textSize="25sp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName5"
+            <AutoCompleteTextView
+                android:id="@+id/challengeRecipeInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

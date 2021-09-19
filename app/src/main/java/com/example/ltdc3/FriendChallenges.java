@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,12 +51,13 @@ public class FriendChallenges extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_friend_challenges, container, false);
-        setupSuggestions();
+        setupNameSuggestions();
+        setupRecipeSuggestions();
 
         return mView;
     }
 
-    private void setupSuggestions() {
+    private void setupNameSuggestions() {
         AutoCompleteTextView nameInput = mView.findViewById(R.id.challengeNameInput);
         String[] suggestions = new String[2];
         Context appContext = getActivity();
@@ -69,5 +71,44 @@ public class FriendChallenges extends Fragment {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, suggestedNames);
         nameInput.setAdapter(adapter);
+    }
+
+    private void setupRecipeSuggestions() {
+        AutoCompleteTextView recipeInput = mView.findViewById(R.id.challengeRecipeInput);
+        recipeInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateRecipeSuggestions();
+            }
+        });
+    }
+
+    private void updateRecipeSuggestions() {
+        Context appContext = getActivity();
+        ArrayList<String> suggestedRecipes = new ArrayList<String>();
+        Database db = (Database)appContext.getApplicationContext();
+        AutoCompleteTextView input = mView.findViewById(R.id.challengeRecipeInput);
+
+        db.getRecipeSuggestions(input.getText().toString(), new RecipeSuggestion() {
+            @Override
+            public void suggestionsReceived(ArrayList<String> suggestions) {
+                for(String recipe : suggestions) {
+                    suggestedRecipes.add(recipe);
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, suggestedRecipes);
+                input.setAdapter(adapter);
+            }
+        });
     }
 }

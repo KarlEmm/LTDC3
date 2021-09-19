@@ -1,6 +1,19 @@
 package com.example.ltdc3;
 
 import android.app.Application;
+import android.content.res.Resources;
+import android.util.Log;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -52,6 +65,44 @@ public class Database extends Application {
         comments.add(c1);
         FeedData fd2 = new FeedData(idSingleton++, R.drawable.gazpacho, "My Summer Gazpacho", "2021/09/15", u2, 10, comments);
         feedData.add(fd2);
+    }
+
+    public void getRecipeSuggestions(String currentText, RecipeSuggestion callback) {
+        String numSuggestions = "1";
+        Resources res = getResources();
+        String spoonacularKey = res.getString(R.string.spoonacularKey);
+        String requestUrl = "https://api.spoonacular.com/recipes/autocomplete?apiKey=" +
+                spoonacularKey + "&number=" + numSuggestions + "&query=" + currentText;
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl,
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    ArrayList<String> suggestions = new ArrayList<String>();
+
+                    try {
+                        JSONArray data = new JSONArray(response);
+
+                        for (int i = 0; i < data.length(); ++i) {
+                            JSONObject obj = data.getJSONObject(i);
+                            suggestions.add(obj.getString("title"));
+                        }
+
+                        callback.suggestionsReceived(suggestions);
+                    } catch(JSONException e) {
+
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.v(null, "FAIL");
+                }
+        });
+
+        queue.add(stringRequest);
     }
 
     @Override
