@@ -52,8 +52,10 @@ public class FriendChallenges extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_friend_challenges, container, false);
+
         setupNameSuggestions();
         setupRecipeSuggestions();
+        setupEvents();
 
         return mView;
     }
@@ -110,6 +112,18 @@ public class FriendChallenges extends Fragment {
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, suggestedRecipes);
                 input.setAdapter(adapter);
                 input.showDropDown();
+            }
+        });
+    }
+
+    private void setupEvents() {
+        Context appContext = getActivity();
+        Database db = (Database)appContext.getApplicationContext();
+
+        View communityButton = mView.findViewById(R.id.sendChallengeButton);
+        communityButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                //db.uploadChallenge();
             }
         });
     }

@@ -83,7 +83,7 @@
                 android:textSize="25sp" />
 
             <Button
-                android:id="@+id/create_account_button"
+                android:id="@+id/sendChallengeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Send challenge!" />
