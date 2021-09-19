@@ -1,15 +1,25 @@
 package com.example.ltdc3;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 
 import org.w3c.dom.Text;
 
@@ -23,8 +33,9 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
 
     private ArrayList<User> leaderboardData;
     private Context context;
+    private Fragment delegate;
 
-    public MyItemRecyclerViewAdapterLeaderboard(ArrayList<User> users, Context context) {
+    public MyItemRecyclerViewAdapterLeaderboard(ArrayList<User> users, Context context, Fragment delegate) {
 
         // We sort users by their points
         Collections.sort(users, new Comparator<User>() {
@@ -33,7 +44,7 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
                 return o2.getPoints() - o1.getPoints();
             }
         });
-
+        this.delegate = delegate;
         leaderboardData = users;
         this.context = context;
     }
@@ -52,6 +63,16 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
         holder.profilPicIV.setImageResource(user.getProfilePic());
         holder.nameTV.setText(user.getCompleteName());
         holder.pointsTV.setText(String.valueOf((user.getPoints())) + " points");
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserChallenge fragChallenge = new UserChallenge();
+                delegate.getParentFragmentManager().beginTransaction().
+                    replace(R.id.nav_host_fragment, fragChallenge, null).
+                    commit();
+            }
+        });
     }
 
     @Override
@@ -64,6 +85,7 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
         private ImageView profilPicIV;
         private TextView nameTV;
         private TextView pointsTV;
+        private LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,7 +93,7 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
             profilPicIV = itemView.findViewById(R.id.idprofilPicIV);
             nameTV = itemView.findViewById(R.id.idnameTV);
             pointsTV = itemView.findViewById(R.id.idpointsTV);
-
+            linearLayout = itemView.findViewById(R.id.user_challenge_id);
         }
 
     }
