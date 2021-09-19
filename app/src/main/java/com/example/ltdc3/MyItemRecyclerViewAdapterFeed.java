@@ -56,6 +56,14 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
         } else {
             holder.commentTV.setText(context.getString(R.string.comments, commentsSz, "comments"));
         }
+        holder.authorIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delegate.getParentFragmentManager().beginTransaction().
+                        replace(R.id.nav_host_fragment, new Profile(), "Profile").
+                        commit();
+            }
+        });
         holder.commentTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

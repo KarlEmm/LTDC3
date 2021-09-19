@@ -33,7 +33,7 @@
 
 
     <TextView
-        android:id="@+id/idnameTV"
+        android:id="@+id/nomProfil"
         android:layout_width="140dp"
         android:layout_height="match_parent"
         android:gravity="center"

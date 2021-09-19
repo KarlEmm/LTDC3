@@ -11,13 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<MyItemRecyclerViewAdapterLeaderboard.ViewHolder> {
 
@@ -69,7 +65,7 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
             super(itemView);
             rankTV = itemView.findViewById(R.id.idrankTV);
             profilPicIV = itemView.findViewById(R.id.idprofilPicIV);
-            nameTV = itemView.findViewById(R.id.idnameTV);
+            nameTV = itemView.findViewById(R.id.nomProfil);
             pointsTV = itemView.findViewById(R.id.idpointsTV);
 
         }
