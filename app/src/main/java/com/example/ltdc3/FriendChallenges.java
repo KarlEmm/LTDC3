@@ -1,15 +1,12 @@
 package com.example.ltdc3;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +58,7 @@ public class FriendChallenges extends Fragment {
     }
 
     private void setupNameSuggestions() {
-        AutoCompleteTextView nameInput = mView.findViewById(R.id.challengeNameInput);
+        AutoCompleteTextView nameInput = mView.findViewById(R.id.friendNameInput);
         String[] suggestions = new String[2];
         Context appContext = getActivity();
 
@@ -123,8 +120,16 @@ public class FriendChallenges extends Fragment {
         View communityButton = mView.findViewById(R.id.sendChallengeButton);
         communityButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //db.uploadChallenge();
+                uploadChallenge();
             }
         });
+    }
+
+    private void uploadChallenge() {
+        String friendToChallenge = ((EditText)mView.findViewById(R.id.friendNameInput)).getText().toString();
+        String challengeName = ((EditText)mView.findViewById(R.id.friendChallengeNameInput)).getText().toString();
+        String recipe = ((EditText)mView.findViewById(R.id.challengeRecipeInput)).getText().toString();
+
+        OpenChallenge challenge = new OpenChallenge(friendToChallenge, challengeName, recipe);
     }
 }
