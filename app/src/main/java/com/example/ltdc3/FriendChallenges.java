@@ -1,6 +1,7 @@
 package com.example.ltdc3;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -108,6 +109,11 @@ public class FriendChallenges extends Fragment {
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, suggestedRecipes);
                 input.setAdapter(adapter);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    input.refreshAutoCompleteResults();
+                }
+                input.showDropDown();
             }
         });
     }
