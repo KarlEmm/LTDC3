@@ -3,6 +3,7 @@ package com.example.ltdc3;
 public class Comment {
     User user;
     String commentText;
+    int nbLikes;
     String timeElapsed;
 
     public User getUser() {
@@ -29,9 +30,10 @@ public class Comment {
         this.timeElapsed = timeElapsed;
     }
 
-    public Comment(User user, String commentText, String timeElapsed) {
+    public Comment(User user, String commentText, int likes, String timeElapsed) {
         this.user = user;
         this.commentText = commentText;
+        this.nbLikes = likes;
         this.timeElapsed = timeElapsed;
     }
 }

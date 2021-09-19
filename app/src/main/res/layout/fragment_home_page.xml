@@ -12,13 +12,13 @@
         android:layout_marginTop="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/idCVAuthor"
+            android:id="@+id/idCVAuthorComment"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="5dp" />
 
         <TextView
-            android:id="@+id/idTVAuthorName"
+            android:id="@+id/idTVAuthorNameComment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

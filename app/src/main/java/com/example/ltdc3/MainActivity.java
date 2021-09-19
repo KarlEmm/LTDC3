@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         navView.setItemIconTintList(null);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.nav_host_fragment, HomePage.class, null)
+                .commit();
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homePage, R.id.challengeBoard, R.id.leaderboard, R.id.profile)
                 .build();

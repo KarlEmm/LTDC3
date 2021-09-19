@@ -7,8 +7,8 @@
     <fragment
         android:id="@+id/homePage"
         android:name="com.example.ltdc3.HomePage"
-        android:label="fragment_home_page_list"
-        tools:layout="@layout/fragment_home_page_list" />
+        android:label="fragment_home_page_list" />
+        <!--tools:layout="@layout/fragment_home_page_list"/>-->
     <fragment
         android:id="@+id/challengeBoard"
         android:name="com.example.ltdc3.ChallengeBoard"

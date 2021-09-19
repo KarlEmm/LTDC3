@@ -21,6 +21,7 @@ public class Comments extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
+    private int mFeedID = 0;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,6 +45,7 @@ public class Comments extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            mFeedID = getArguments().getInt("feedID");
         }
     }
 
@@ -61,7 +63,7 @@ public class Comments extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapterFeed(((Database) context.getApplicationContext()).getFeedData(), context));
+            recyclerView.setAdapter(new RecyclerViewAdapterComment(((Database) context.getApplicationContext()).getFeedData().get(mFeedID).getComments(), context));
         }
         return view;
     }
