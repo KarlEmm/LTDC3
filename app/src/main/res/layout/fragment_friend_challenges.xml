@@ -23,7 +23,7 @@
                 android:textSize="25sp" />
 
             <AutoCompleteTextView
-                android:id="@+id/challengeNameInput"
+                android:id="@+id/friendNameInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -42,7 +42,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/friendChallengeNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -61,10 +61,11 @@
                 android:text="What will they cook?"
                 android:textSize="25sp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName5"
+            <AutoCompleteTextView
+                android:id="@+id/challengeRecipeInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:completionThreshold="1"
                 android:ems="10"
                 android:hint="Recipe"
                 android:inputType="textPersonName" />
@@ -82,7 +83,7 @@
                 android:textSize="25sp" />
 
             <Button
-                android:id="@+id/create_account_button"
+                android:id="@+id/sendChallengeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Send challenge!" />

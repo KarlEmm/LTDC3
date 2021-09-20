@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/openChallengePanel"
+        android:layout_width="261dp"
+        android:layout_height="361dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/openChallengesButton"
+        app:layout_constraintStart_toStartOf="@+id/openChallengesButton"
+        app:layout_constraintTop_toTopOf="@+id/openChallengesItemName">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/openChallengesRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="45dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/openChallengesImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/beef" />
+
+            <Button
+                android:id="@+id/challengeAcceptButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:text="Take on challenge!"
+                android:textColor="@color/grey"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/challengeDeclineButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:text="Decline"
+                android:textColor="@color/grey"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/openChallengesButton"
+        android:layout_width="336dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/open_challenge_item_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/openChallengesItemName"
+        android:layout_width="221dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="8dp"
+        android:text="Challenge name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/openChallengesButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/openChallengesItemFriend"
+        android:layout_width="198dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="32dp"
+        android:text="By Carl"
+        app:layout_constraintStart_toStartOf="@+id/openChallengesButton"
+        app:layout_constraintTop_toTopOf="@+id/openChallengesButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
