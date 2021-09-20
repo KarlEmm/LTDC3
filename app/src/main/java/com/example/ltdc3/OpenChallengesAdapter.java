@@ -153,7 +153,7 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
         // Accept
         viewHolder.getAcceptButton().setOnClickListener(new View.OnClickListener() {
             public void onClick(View clickedView) {
-                showAcceptDialog(clickedView.getContext());
+                showAcceptDialog(viewHolder, clickedView.getContext());
             }
         });
 
@@ -171,12 +171,13 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
         return localDataSet.size();
     }
 
-    private void showAcceptDialog(Context context) {
+    private void showAcceptDialog(ViewHolder viewHolder, Context context) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
         builder.setMessage("Challenge accepted!");
         builder.setPositiveButton("Lets get cooking!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                localDataSet.remove(viewHolder.getAbsoluteAdapterPosition());
                 parentFragmentManager.popBackStackImmediate();
             }
         });

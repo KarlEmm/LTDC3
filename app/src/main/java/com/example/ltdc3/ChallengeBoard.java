@@ -69,34 +69,46 @@ public class ChallengeBoard extends Fragment {
     }
 
     private void setClickEvents(ViewGroup container) {
-        View communityButton = mView.findViewById(R.id.communityChallengesText);
-        communityButton.setOnClickListener(new View.OnClickListener() {
+        class CommunityListener implements View.OnClickListener {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new CommunityChallenge(), "communityChallenges").
                         addToBackStack(null).
                         commit();
             }
-        });
+        }
 
-        View friendButton = mView.findViewById(R.id.challengeAFriendText);
-        friendButton.setOnClickListener(new View.OnClickListener() {
+       class FriendListener implements View.OnClickListener   {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new FriendChallenges(), "friendChallenges").
                         addToBackStack(null).
                         commit();
             }
-        });
+        }
 
-        View openButton = mView.findViewById(R.id.yourOpenChallengesText);
-        openButton.setOnClickListener(new View.OnClickListener() {
+        class OpenChallengesListener implements View.OnClickListener  {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new OpenChallenges(), "openChallenges").
                         addToBackStack(null).
                         commit();
             }
-        });
+        }
+
+        View communityImage = mView.findViewById(R.id.communityChallenges);
+        View communityText = mView.findViewById(R.id.communityChallengesText);
+        communityImage.setOnClickListener(new CommunityListener());
+        communityText.setOnClickListener(new CommunityListener());
+
+        View friendImage = mView.findViewById(R.id.challengeAFriend);
+        View friendText = mView.findViewById(R.id.challengeAFriendText);
+        friendImage.setOnClickListener(new FriendListener());
+        friendText.setOnClickListener(new FriendListener());
+
+        View openImage = mView.findViewById(R.id.yourOpenChallenges);
+        View openText = mView.findViewById(R.id.yourOpenChallengesText);
+        openImage.setOnClickListener(new OpenChallengesListener());
+        openText.setOnClickListener(new OpenChallengesListener());
     }
 }
