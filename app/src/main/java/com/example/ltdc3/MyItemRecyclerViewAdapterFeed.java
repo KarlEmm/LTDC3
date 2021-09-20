@@ -73,8 +73,9 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
         holder.authorIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Profile profil = new Profile(itemData.getUser());
                 delegate.getParentFragmentManager().beginTransaction().
-                        replace(R.id.nav_host_fragment, new Profile(), "Profile").
+                        replace(R.id.nav_host_fragment, profil, "Profile").
                         commit();
             }
         });

@@ -98,6 +98,7 @@
             android:layout_width="129dp"
             android:layout_height="38dp"
             android:text="Sign up"
+            android:background="@android:color/transparent"
             android:textColor="#4CAF50" />
     </LinearLayout>
 
@@ -109,12 +110,14 @@
 
     <Button
         android:id="@+id/forgotPassButton"
-        android:layout_width="216dp"
+        android:layout_width="212dp"
         android:layout_height="46dp"
         android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:textAlignment="viewStart"
         android:text="Forgot your password ?"
         android:textColor="#4CAF50"
 
-        />
+        android:gravity="start" />
 
 </LinearLayout>

@@ -2,11 +2,14 @@ package com.example.ltdc3;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +22,7 @@ public class Profile extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private User user;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -26,7 +30,21 @@ public class Profile extends Fragment {
 
     public Profile() {
         // Required empty public constructor
+        this.user = new User("etiennelazure@gmail.com", "Lazure", "Etienne", "Polytechnique", "testetes", R.drawable.chef, 500);
+
     }
+
+    public Profile(User user) {
+        // Required empty public constructor
+        if(user.name != null) {
+            this.user = user;
+        } else {
+            this.user = new User("etiennelazure@gmail.com", "Lazure", "Etienne", "Polytechnique", "testetes", R.drawable.chef, 500);
+
+        }
+
+    }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -59,6 +77,21 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        TextView name = view.findViewById(R.id.nomProfil);
+        name.setText(user.getCompleteName());
+
+        TextView school = view.findViewById(R.id.nomEcole);
+        school.setText(user.getSchool());
+
+        TextView friends = view.findViewById(R.id.nombreAmis);
+        friends.setText("4 friends");
+
+        ImageView img = view.findViewById(R.id.idprofilPicIV);
+        img.setImageResource(user.getProfilePic());
+
+        return view;
     }
+
 }

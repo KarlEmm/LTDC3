@@ -17,15 +17,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
-<<<<<<< HEAD
-=======
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
 
 import org.w3c.dom.Text;
 
->>>>>>> fa7b4fc6f97b04c04270902fe5b45375e1b8cbc8
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
