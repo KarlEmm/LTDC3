@@ -11,9 +11,9 @@ Road to Chef aspires to be an inclusive experience for all high school students 
 * [Next Steps — Future Features and Recommendations](#next-steps--future-features-and-recommendations)
 
 ## How To Run
-Download the latest version of **Android Studio** and open this root file of this project in the IDE. From there, you can open the emulator in the IDE and run the solution. This app was tested with the Google Pixel 2 emulator set on Android 11. We highly recommend you use the same settings for the optimal experience.
+Download the latest version of **Android Studio** and open the root file of this project in the IDE. From there, you can open the emulator in the IDE and run the solution. This app was tested with the Google Pixel 2 emulator set on Android 11. We highly recommend you use the same settings for an optimal experience.
 
-A prototype of this app was made using [FlutterFlow](https://flutterflow.io/). You can also check it out using the apk in the root folder, since there are many features that we recommend as future features on this version of the solution.
+A prototype of this app was made using [FlutterFlow](https://flutterflow.io/). You can check it out using the apk in the root folder. We encourage you to take a look at it since some of its implemented features are recommended as future developments on the Android version of the solution.
 
 ## The Issue
 
@@ -53,11 +53,11 @@ Whereas we only implemented part of the solution, sending a notification that th
 
 ### Store recipes, profiles, challenges and schools on a database
 
-While we couldn't implement a server with the little time we had to code our app, with how we structured the code, it would be easy to use either an external food API like Spoontaculer to do the recipes, or host a list yourself on a database. There should be "base" challenges, created by La Tablée des Chefs, and "community" challenges, created by each user and approved by a moderator at school.
+While we couldn't implement a server with the little time we had to code our application, with how we structured the code, it would be easy to use either an external food API like Spoonacular to do the recipes, or host a list yourself on a database. There should be "base" challenges, created by La Tablée des Chefs, and "community" challenges, created by each user and approved by a moderator at school.
 
 ### Use the existing ChefRisingStar app to create recipes and additional challenges
 
-The existing ChefRisingStar app did something very interesting: you could substitute some foods for others, most notably for the ecological impact, and for a vegan-friendly option. That is a great thing, and we would recommend to use this to your advantage when giving the user the control to create new challenges.
+The existing ChefRisingStar application has some interesting features. For example, you can substitute ingredients for others. Particularly, you can make a recipe more ecological and healthy. That is a great thing, and we would recommend to use this to your advantage when giving the user the control to create new challenges.
 
 ## Next Steps — Future Features and Recommendations
 
@@ -65,5 +65,5 @@ The existing ChefRisingStar app did something very interesting: you could substi
 * Boons for redeeming points (in-app profile customization, for example)
 * Achievements
 * In-person QR code scanning to earn bonuses
-* Give points through the Défi Attache Ta Toque and other events organized by LTDC
+* Give points through the Défi Attache ta Toque and other events organized by LTDC
 * Implement the streak counter and the friends list we made space for on the toolbar. Give points for connecting many days in a row
