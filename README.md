@@ -41,6 +41,10 @@ See something on the feed you really like? Share it on other social media! (*Fac
 
 ## Recommendations for Implementation
 
+### When confirming a challenge, send a picture of the meal to confirm it is done
+
+Whereas we only implemented part of the solution, sending a notification that the challenge is accepted to the user, this can be used to instead prompt the user to submit a photo. Without having any database, this would not have gone much further than this, but in the full version, there definitely should be this functionality. Plus, posting an unprompted challenge on the feed should be something to implement as well.
+
 ### Store recipes, profiles, challenges and schools on a database
 
 While we couldn't implement a server with the little time we had to code our app, with how we structured the code, it would be easy to use either an external food API like Spoontaculer to do the recipes, or host a list yourself on a database. There should be "base" challenges, created by La Tablée des Chefs, and "community" challenges, created by each user and approved by a moderator at school.
