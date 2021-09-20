@@ -65,7 +65,7 @@ public class MyItemRecyclerViewAdapterLeaderboard extends RecyclerView.Adapter<M
             @Override
             public void onClick(View v) {
                 UserChallenge fragChallenge = new UserChallenge();
-                delegate.getParentFragmentManager().beginTransaction().
+                delegate.getParentFragment().getParentFragmentManager().beginTransaction().
                     replace(R.id.nav_host_fragment, fragChallenge, null).
                     commit();
             }

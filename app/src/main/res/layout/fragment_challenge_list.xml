@@ -10,6 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".Leaderboard_main"
-    tools:listitem="@layout/fragment_challenge" >
+    tools:listitem="@layout/fragment_challenge" />
 
-</androidx.recyclerview.widget.RecyclerView>

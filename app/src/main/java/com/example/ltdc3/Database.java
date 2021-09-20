@@ -44,9 +44,9 @@ public class Database extends Application {
         users.add(u4);
 
         challenges = new ArrayList<>();
-        challenges.add(new Challenge("Vegan roastbeef", 25, "april 12 2021"));
-        challenges.add(new Challenge("Sushi", 25, "april 16 2021"));
-        challenges.add(new Challenge("fish n chips", 25, "11 september 2001"));
+        challenges.add(new Challenge("Vegan roastbeef", 150, "april 12 2021"));
+        challenges.add(new Challenge("Sushi", 150, "april 16 2021"));
+        challenges.add(new Challenge("fish n chips", 200, "June 12 2012"));
 
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", 2, "1h");
         Comment c2 = new Comment(u3, "What recipe did you follow? This looks amazing.", 3, "2h");

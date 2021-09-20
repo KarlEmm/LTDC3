@@ -20,7 +20,6 @@ public class UserChallenge extends Fragment {
     public UserChallenge() {
     }
 
-    @SuppressWarnings("unused")
     public static UserChallenge newInstance(int columnCount) {
         UserChallenge fragment = new UserChallenge();
         Bundle args = new Bundle();

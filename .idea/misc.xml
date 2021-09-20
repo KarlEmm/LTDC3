@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_challenge.xml" value="0.33" />
+        <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_challenge_list.xml" value="0.10833333333333334" />
+        <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_comments.xml" value="0.2898550724637681" />
+        <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_comments_list.xml" value="0.2898550724637681" />
         <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_home_page.xml" value="0.33" />
         <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_leaderboard.xml" value="0.14629629629629629" />
+        <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_leaderboard_list.xml" value="0.2898550724637681" />
         <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/fragment_profile.xml" value="0.36875" />
         <entry key="..\:/Projects/LTDC3/app/src/main/res/layout/login.xml" value="0.2898550724637681" />
       </map>

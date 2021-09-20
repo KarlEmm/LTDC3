@@ -30,10 +30,10 @@ public class RecyclerViewAdapterChallengeUser extends RecyclerView.Adapter<Recyc
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterChallengeUser.ViewHolder holder, int position) {
-//        Challenge itemData = challengeList.get(position);
-//        holder.challengeDate.setText("FFFF");
-//        holder.challengeDate.setText("FFFF");
-//        holder.challengeDate.setText("FFFF");
+        Challenge itemData = challengeList.get(position);
+        holder.challengeDate.setText(itemData.getCompletionDate());
+        holder.challengePoints.setText(String.valueOf(itemData.getPoints()));
+        holder.challengeName.setText(itemData.getChallengeName());
     }
 
     @Override

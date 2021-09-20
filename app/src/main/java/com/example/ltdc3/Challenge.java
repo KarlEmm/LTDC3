@@ -4,6 +4,23 @@ public class Challenge {
 
 
     private String challengeName;
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public String getCompletionDate() {
+        return completionDate;
+    }
+
+    public void setCompletionDate(String completionDate) {
+        this.completionDate = completionDate;
+    }
+
     private int points;
     private String completionDate;
 
