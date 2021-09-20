@@ -12,6 +12,16 @@
     <string name="road_to_chef">Road to Chef</string>
     <string name="recovery_passowrd">Password Recovery </string>
     <string name="friends_leaderboard">Friends</string>
+    <string-array name="school_array">
+        <item>Pensionnat St-Joseph</item>
+        <item>Collège Durocher</item>
+        <item>Collège Jean-de-Brébeuf</item>
+        <item>Polytechnique St-Hubert</item>
+        <item>Émilie-Gammelin</item>
+        <item>Lycée Marie-Curie</item>
+        <item>Collège Charles Lemoyne</item>
+        <item>Collège de France</item>
+    </string-array>
 
 
     <!-- FACEBOOK API -->
