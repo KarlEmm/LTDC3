@@ -56,3 +56,4 @@ The existing ChefRisingStar app did something very interesting: you could substi
 * Achievements
 * In-person QR code scanning to earn bonuses
 * Give points through the Défi Attache Ta Toque and other events organized by LTDC
+* Implement the streak counter and the friends list we made space for on the toolbar. Give points for connecting many days in a row
