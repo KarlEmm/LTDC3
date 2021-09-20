@@ -74,6 +74,7 @@ public class ChallengeBoard extends Fragment {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new CommunityChallenge(), "communityChallenges").
+                        addToBackStack(null).
                         commit();
             }
         });
@@ -83,6 +84,7 @@ public class ChallengeBoard extends Fragment {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new FriendChallenges(), "friendChallenges").
+                        addToBackStack(null).
                         commit();
             }
         });
@@ -92,6 +94,7 @@ public class ChallengeBoard extends Fragment {
             public void onClick(View view) {
                 getParentFragmentManager().beginTransaction().
                         replace(container.getId(), new OpenChallenges(), "openChallenges").
+                        addToBackStack(null).
                         commit();
             }
         });

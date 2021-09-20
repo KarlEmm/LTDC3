@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link OpenChallenges#newInstance} factory method to
@@ -68,8 +70,10 @@ public class OpenChallenges extends Fragment {
         // Set the adapter
         if (recyclerView instanceof RecyclerView) {
             Context context = view.getContext();
+            ArrayList<OpenChallenge> openChallenges = ((Database) context.getApplicationContext()).openChallenges;
+
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new OpenChallengesAdapter(((Database) context.getApplicationContext()).openChallenges));
+            recyclerView.setAdapter(new OpenChallengesAdapter(openChallenges, getParentFragmentManager(), container));
         }
         return view;
     }
