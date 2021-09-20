@@ -3,11 +3,15 @@
 Road to Chef aspires to be an inclusive experience for all high school students who share a passion for cooking. It offers them a community to share their passion.
 
 ## Table of Contents
+* [How To Run](#how-to-run)
 * [The Issue](#the-issue)
 * [Our Magic Solution](#our-magic-solution)
 * [How It Works](#how-it-works)
 * [Recommendations for Implementation](#recommendations-for-implementation)
 * [Next Steps — Future Features and Recommendations](#next-steps--future-features-and-recommendations)
+
+## How To Run
+Download the latest version of **Android Studio** and open this root file of this project in the IDE. From there, you can open the emulator in the IDE and run the solution. This app was tested with the Google Pixel 2 emulator set on Android 11. We highly recommend you use the same settings for the optimal experience.
 
 ## The Issue
 
