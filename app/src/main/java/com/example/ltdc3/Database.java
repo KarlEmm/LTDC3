@@ -66,9 +66,9 @@ public class Database extends Application {
         sentChallenges = new ArrayList<>();
 
         openChallenges = new ArrayList<>();
-        openChallenges.add(new OpenChallenge("Vegan spaghetti Bolognese!!", "Spaghetti Bolognese", "Paul Blart", R.drawable.spaghetti));
-        openChallenges.add(new OpenChallenge("Healthy Bread Challenge 2021", "Whole-grain bread", "John Cena", R.drawable.bread));
-        openChallenges.add(new OpenChallenge("Gordan Ramsay's Beef Wellington", "The Ultimate Beef Wellington", "Marie Curie", R.drawable.beef));
+        openChallenges.add(new OpenChallenge("Vegan Bolognese!!", "Spaghetti Bolognese", "Karl-Emmanuel Bastarache", R.drawable.spaghetti));
+        openChallenges.add(new OpenChallenge("Healthy Bread Challenge", "Whole-grain bread", "Paul Blart", R.drawable.bread));
+        openChallenges.add(new OpenChallenge("Ramsay's Beef Wellington", "The Ultimate Beef Wellington", "Paul Harvard", R.drawable.beef));
         openChallenges.add(new OpenChallenge("Frozen Summer Challenge", "Homemade Frozen Yogurt", "Will Smith", R.drawable.yogurt));
 
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", 2, "1h");
