@@ -175,7 +175,7 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
         builder.setMessage("Challenge accepted!");
-        builder.setPositiveButton("Lets get cooking!", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Let's get cooking!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 localDataSet.remove(viewHolder.getAbsoluteAdapterPosition());
                 parentFragmentManager.popBackStackImmediate();
