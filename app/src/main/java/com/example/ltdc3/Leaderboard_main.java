@@ -23,7 +23,6 @@ public class Leaderboard_main extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
     }
 
     @Override
@@ -33,6 +32,9 @@ public class Leaderboard_main extends Fragment {
 
         button_friends = view.findViewById(R.id.button4);
         button_school = view.findViewById(R.id.button5);
+
+        button_friends.setTextColor(Color.parseColor("#4d51b7"));
+        button_friends.setPaintFlags(button_friends.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         button_friends.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

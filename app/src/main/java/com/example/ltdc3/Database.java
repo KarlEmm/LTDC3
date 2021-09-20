@@ -25,6 +25,8 @@ public class Database extends Application {
         this.feedData = feedData;
     }
 
+    public ArrayList<Challenge> challenges;
+
     public void initDB() {
         ArrayList<Comment> comments = new ArrayList<>();
 
@@ -41,15 +43,20 @@ public class Database extends Application {
         users.add(u3);
         users.add(u4);
 
+        challenges = new ArrayList<>();
+        challenges.add(new Challenge("Vegan roastbeef", 25, "april 12 2021"));
+        challenges.add(new Challenge("Sushi", 25, "april 16 2021"));
+        challenges.add(new Challenge("fish n chips", 25, "11 september 2001"));
+
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", 2, "1h");
+        Comment c2 = new Comment(u3, "What recipe did you follow? This looks amazing.", 3, "2h");
+
         comments.add(c1);
+        comments.add(c2);
 
         FeedData fd1 = new FeedData(idSingleton++, R.drawable.spaghetti, "Yummy Spaghetti", "2021/09/15", u1, 3, comments);
         feedData.add(fd1);
 
-        c1 = new Comment(u1, "What recipe did you follow? This looks amazing.", 3, "34min");
-        comments.clear();
-        comments.add(c1);
         FeedData fd2 = new FeedData(idSingleton++, R.drawable.gazpacho, "My Summer Gazpacho", "2021/09/15", u2, 10, comments);
         feedData.add(fd2);
     }

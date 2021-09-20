@@ -3,13 +3,17 @@ package com.example.ltdc3;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +22,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.facebook.share.Share;
+import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.ShareMediaContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareDialog;
 
 import java.util.ArrayList;
 
@@ -46,6 +59,7 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
     public void onBindViewHolder(@NonNull MyItemRecyclerViewAdapterFeed.ViewHolder holder, int position) {
         FeedData itemData = feedDataArrayList.get(position);
         holder.authorTV.setText(context.getString(R.string.username, itemData.getUser().getFirstname(), itemData.getUser().getName()));
+        holder.postIV.setDrawingCacheEnabled(true);
         holder.postIV.setImageResource(itemData.getImagePost());
         holder.likeTV.setText("" + itemData.getLikesCount() + " likes");
         int commentsSz = itemData.getComments().size();
@@ -84,6 +98,23 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
                 holder.buttonLike.setBackgroundColor(Color.parseColor("#ff3399"));
             }
         });
+
+        holder.shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap image = BitmapFactory.decodeResource(context.getResources(),
+                        R.drawable.spaghetti);
+
+                // Random image
+                ShareLinkContent content = new ShareLinkContent.Builder().setContentUrl(Uri.parse("http://www.villathena.com/images/nearby/thumbs/le-bus-bleu-private-tours.jpg")).build();
+
+                FragmentActivity ac = delegate.getActivity();
+                ShareDialog shareDialog = new ShareDialog(ac);
+
+                shareDialog.show(content, ShareDialog.Mode.WEB);
+            }
+        });
+
         holder.authorIV.setImageResource(itemData.getUser().getProfilePic());
     }
 
@@ -99,6 +130,7 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
         private TextView likeTV;
         private TextView commentTV;
         private ImageButton buttonLike;
+        private ImageButton shareBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -108,6 +140,7 @@ public class MyItemRecyclerViewAdapterFeed extends RecyclerView.Adapter<MyItemRe
             likeTV = itemView.findViewById(R.id.idTVLikes);
             commentTV = itemView.findViewById(R.id.idTVComments);
             buttonLike = itemView.findViewById(R.id.likeBtn);
+            shareBtn = itemView.findViewById(R.id.shareBtn);
         }
     }
 }
