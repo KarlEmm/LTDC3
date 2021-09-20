@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,9 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView challengeName;
         private final TextView friendName;
+        private final TextView recipe;
+        private final ImageView image;
+
         private boolean open = false;
         private ArrayList<ViewHolder> allItems;
         private View view;
@@ -36,6 +40,8 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
             this.allItems = allItems;
             challengeName = (TextView) view.findViewById(R.id.openChallengesItemName);
             friendName = (TextView) view.findViewById(R.id.openChallengesItemFriend);
+            recipe = (TextView) view.findViewById(R.id.openChallengesRecipe);
+            image = (ImageView) view.findViewById(R.id.openChallengesImage);
 
             setupEvents(view);
         }
@@ -46,6 +52,14 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
 
         public TextView getFriendName() {
             return friendName;
+        }
+
+        public TextView getRecipe() {
+            return recipe;
+        }
+
+        public ImageView getImage() {
+            return image;
         }
 
         private void setupEvents(View view) {
@@ -110,6 +124,8 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
         // contents of the view with that element
         viewHolder.getChallengeName().setText(localDataSet.get(position).challengeName);
         viewHolder.getFriendName().setText("By " + localDataSet.get(position).fromFriend);
+        viewHolder.getRecipe().setText(localDataSet.get(position).recipe);
+        viewHolder.getImage().setImageResource(localDataSet.get(position).image);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
