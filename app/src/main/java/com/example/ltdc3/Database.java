@@ -39,6 +39,7 @@ public class Database extends Application {
     }
 
     public ArrayList<Challenge> challenges;
+    public ArrayList<SentChallenge> sentChallenges;
     public ArrayList<OpenChallenge> openChallenges;
 
     public void initDB() {
@@ -62,7 +63,12 @@ public class Database extends Application {
         challenges.add(new Challenge("Sushi", 25, "april 16 2021"));
         challenges.add(new Challenge("fish n chips", 25, "11 september 2001"));
 
+        sentChallenges = new ArrayList<>();
+
         openChallenges = new ArrayList<>();
+        openChallenges.add(new OpenChallenge("Vegan spaghetti Bolognese!!", "Spaghetti Bolognese", "Paul Blart"));
+        openChallenges.add(new OpenChallenge("Healthy Bread Challenge 2021", "Whole-grain bread", "John Cena"));
+        openChallenges.add(new OpenChallenge("Gordan Ramsay's Beef Wellington", "The Ultimate Beef Wellington", "Marie Curie"));
 
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", 2, "1h");
         Comment c2 = new Comment(u3, "What recipe did you follow? This looks amazing.", 3, "2h");

@@ -114,9 +114,6 @@ public class FriendChallenges extends Fragment {
     }
 
     private void setupEvents() {
-        Context appContext = getActivity();
-        Database db = (Database)appContext.getApplicationContext();
-
         View communityButton = mView.findViewById(R.id.sendChallengeButton);
         communityButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -130,6 +127,16 @@ public class FriendChallenges extends Fragment {
         String challengeName = ((EditText)mView.findViewById(R.id.friendChallengeNameInput)).getText().toString();
         String recipe = ((EditText)mView.findViewById(R.id.challengeRecipeInput)).getText().toString();
 
-        OpenChallenge challenge = new OpenChallenge(friendToChallenge, challengeName, recipe);
+        Context appContext = getActivity();
+        Database db = (Database)appContext.getApplicationContext();
+
+        SentChallenge challenge = new SentChallenge(friendToChallenge, challengeName, recipe);
+        db.sentChallenges.add(challenge);
+
+        showPopup();
+    }
+
+    private void showPopup() {
+
     }
 }

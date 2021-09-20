@@ -1,13 +1,13 @@
 package com.example.ltdc3;
 
 public class OpenChallenge {
-    String friendToChallenge;
     String challengeName;
     String recipe;
+    String fromFriend;
 
-    public OpenChallenge(String friendToChallenge, String challengeName, String recipe) {
-        this.friendToChallenge = friendToChallenge;
+    public OpenChallenge(String challengeName, String recipe, String fromFriend) {
         this.challengeName = challengeName;
         this.recipe = recipe;
+        this.fromFriend = fromFriend;
     }
 }
