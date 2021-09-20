@@ -69,6 +69,7 @@ public class Database extends Application {
         openChallenges.add(new OpenChallenge("Vegan spaghetti Bolognese!!", "Spaghetti Bolognese", "Paul Blart", R.drawable.spaghetti));
         openChallenges.add(new OpenChallenge("Healthy Bread Challenge 2021", "Whole-grain bread", "John Cena", R.drawable.bread));
         openChallenges.add(new OpenChallenge("Gordan Ramsay's Beef Wellington", "The Ultimate Beef Wellington", "Marie Curie", R.drawable.beef));
+        openChallenges.add(new OpenChallenge("Frozen Summer Challenge", "Homemade Frozen Yogurt", "Will Smith", R.drawable.yogurt));
 
         Comment c1 = new Comment(u2, "This looks very good! Can I have a share tomorrow? :')", 2, "1h");
         Comment c2 = new Comment(u3, "What recipe did you follow? This looks amazing.", 3, "2h");
