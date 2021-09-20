@@ -1,6 +1,6 @@
-# Be My Chef
+# Road to Chef
 
-Be My Chef is a novel, exciting, and educational app made to inspire the youth of today to lead the culinary world of tomorrow.
+Road to Chef aspires to be an inclusive experience for all high school students who share a passion for cooking. It offers them a community to share their passion.
 
 ## Table of Contents
 * [The Issue](#the-issue)
