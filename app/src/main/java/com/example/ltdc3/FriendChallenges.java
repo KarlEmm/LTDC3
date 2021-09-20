@@ -1,11 +1,14 @@
 package com.example.ltdc3;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -133,10 +136,30 @@ public class FriendChallenges extends Fragment {
         SentChallenge challenge = new SentChallenge(friendToChallenge, challengeName, recipe);
         db.sentChallenges.add(challenge);
 
-        showPopup();
+        showPopup(friendToChallenge, recipe);
     }
 
-    private void showPopup() {
+    private void showPopup(String friendName, String recipe) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        builder.setTitle("Challenge sent!");
+
+        String dialogMessage = "You have challenged <b>" + friendName + "</b> to cook <b>" + recipe + "</b>.";
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            builder.setMessage(Html.fromHtml(dialogMessage, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            builder.setMessage(Html.fromHtml(dialogMessage));
+        }
+
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                getParentFragmentManager().popBackStackImmediate();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
     }
 }

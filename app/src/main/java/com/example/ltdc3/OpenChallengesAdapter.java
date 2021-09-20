@@ -178,11 +178,12 @@ public class OpenChallengesAdapter extends RecyclerView.Adapter<OpenChallengesAd
         builder.setPositiveButton("Lets get cooking!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 parentFragmentManager.popBackStackImmediate();
-
             }
         });
 
         AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
 
