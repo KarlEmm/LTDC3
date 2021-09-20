@@ -13,6 +13,8 @@ Road to Chef aspires to be an inclusive experience for all high school students 
 ## How To Run
 Download the latest version of **Android Studio** and open this root file of this project in the IDE. From there, you can open the emulator in the IDE and run the solution. This app was tested with the Google Pixel 2 emulator set on Android 11. We highly recommend you use the same settings for the optimal experience.
 
+A prototype of this app was made using [FlutterFlow](https://flutterflow.io/). You can also check it out using the apk in the root folder, since there are many features that we recommend as future features on this version of the solution.
+
 ## The Issue
 
 La Tablée des Chefs (LTDC) expressed the need for a digital solution in order to reach more high school students with their culinary activities. LTDC wanted a solution to create a sense of community amongst its users whilst promoting healthy eating habits and ecological ones.
